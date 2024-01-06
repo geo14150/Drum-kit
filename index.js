@@ -1,24 +1,17 @@
-
- 
-  // Assuming you have a button with a specific class, e.g., "drum-button"
+ // Assuming you have a button with a specific class, e.g., "drum-button"
   var buttons = document.querySelectorAll(".drum").length;
   for (var i=0; i<buttons; i++){
     document.querySelectorAll(".drum")[i].addEventListener("click",function(){
-      
       var buttonInnerHTML = this.innerHTML;
-      
-      makeSound(buttonInnerHTML);
+       makeSound(buttonInnerHTML);
       buttonAnimation(buttonInnerHTML);
-  
-    });  
+     });  
   };
   document.addEventListener("keypress", function (event) {
-    
-    makeSound(event.key);
+     makeSound(event.key);
     buttonAnimation(event.key);
   });
-
-  function makeSound(key){
+function makeSound(key){
     switch (key) {
       case "w":
         var audio = new Audio("sound1.wav");
@@ -54,7 +47,6 @@
         var audio = new Audio("sound7.wav");
         audio.play();
       break;
-      
       default: console.log(buttonText);
      }
   }
@@ -67,36 +59,6 @@
       activeButton.classList.remove("pressed");
     }, "100");
   }
-
-
-   //alert ("click me");  
-  // var audio= new Audio ("audio.mp3");
-
-//}
-//debugger;
-// pause and play music 
-//var isPlaying = false;
-//function togglePlay() {
-//    isPlaying ? audio.pause() : audio.play();
-//  };
-  
-//  audio.onplaying = function() {
-    isPlaying = true;
-//  };
- // audio.onpause = function() {
- //   isPlaying = false;
-//  };
-
-function  Hellboy(name,surname,age)  { 
-  this.name=name; this.surname=surname; this.age=age;
-  this.clean= function(){ 
-    alert("cleaning in progress...");
-  }
-} 
-var hellboy1 = new Hellboy("asfs", "dsgs", 19);
-
-hellboy1.clean();// an example of constructor function 
-
 
 function anotherAddEventListener(typeofevent,calback) {
   var eventThatHappened = { 
@@ -112,3 +74,4 @@ if (eventThatHappened.eventType === typeofevent){
 anotherAddEventListener("keypress", function(event) {               
      console.log(event);   
       });
+
